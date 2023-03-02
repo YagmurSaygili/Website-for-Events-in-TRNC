@@ -1,0 +1,114 @@
+html, body {
+    margin: 0; padding: 0; border: 0;
+}
+body {
+    background-color: #BFBFBF
+}
+.top {
+    position: fixed;
+    padding: 30px;
+    width: 100%;
+    font-weight: bold;
+    height: 3%;
+    top: 0;
+    background: #333E50;
+    font-size: 25px;
+    color: white;
+}
+.container{
+    position: fixed;
+    color: white;
+    top: 30%;
+    right: 35%;
+    left: 35%;
+    font-size: 20px;
+    padding: 25px;
+    background-color: #333E50;
+    border: 3px solid black;
+}
+.containerHome{
+    position: fixed;
+    color: white;
+    top: 15%;
+    right: 20%;
+    left: 20%;
+    font-size: 20px;
+    padding: 50px;
+    background-color: #333E50;
+    border: 3px solid black;
+}
+
+.EventTable{
+    width: 800px;
+}
+
+.containerAddEvent{
+    position: fixed;
+    color: white;
+    top: 15%;
+    right: 35%;
+    left: 35%;
+    font-size: 20px;
+    padding: 25px;
+    background-color: #333E50;
+    border: 3px solid black;
+}
+
+button{
+    background-color: #AD0E24;
+    color: white;
+    width: auto;
+    padding: 10px 18px;
+    margin: 10px 0;
+    cursor: pointer;
+}
+input[type=text], input[type=password] {
+    width: 100%;
+    margin: 8px 0;
+    padding: 12px 20px;
+    display: inline-block;
+    border: 2px solid #BFBFBF;
+    box-sizing: border-box;
+}
+button:hover{
+    opacity: 0.75;
+}
+.registerbtn {
+    width: auto;
+    padding: 10px 18px;
+    margin: 10px 10px;
+}
+.logoutbtn{
+    line-height: 12px;
+    width: 100px;
+    font-size: 15px;
+    font-family: tahoma;
+    margin-top: 1px;
+    margin-right: 2px;
+    position:fixed;
+    top:3%;
+    right:3%;
+}
+.mainPagebtn{
+    line-height: 12px;
+    width: 150px;
+    font-size: 15px;
+    font-family: tahoma;
+    margin-top: 1px;
+    margin-right: 2px;
+    position:fixed;
+    top:3%;
+    right:10%;
+}
+table {
+    counter-reset: tableCount;
+    background-color: white;
+    color: black;
+}
+.counterCell:before {
+    content: counter(tableCount);
+    counter-increment: tableCount;
+}
+.msg{
+    color: red;
+}

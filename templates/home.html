@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="static/style.css" type="text/css">
+</head>
+<body>
+<div class="top">My Events !</div>
+<a href=/logout><button type="button" class="logoutbtn">Logout</button></a>
+<a href=/index><button type="button" class="mainPagebtn">Go to main Page</button></a>
+    <form action="/register" method="POST">
+        <div class="containerHome">
+          <table class="EventTable">
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Location</th>
+                <th>City</th>
+                <th>Price</th>
+                <th>Date</th>
+                <th>Time</th>
+            </tr>
+            {% for event in events %}
+            <tr>
+                <td>{{ event[0] }}</td>
+                <td>{{ event[1] }}</td>
+                <td>{{ event[2] }}</td>
+                <td>{{ event[3] }}</td>
+                <td>{{ event[4] }}</td>
+                <td>{{ event[5] }}</td>
+                <td>{{ event[6] }}</td>
+              <td>
+                <form action="/deactivate-event" method="POST">
+                  <input type="hidden" name="eventId" value="{{ event[7] }}">
+                  <input type="submit" value="Deactivate">
+                </form>
+              </td>
+            </tr>
+            {% endfor %}
+          </table>
+        </div>
+    </form>
+</body>
+</html>

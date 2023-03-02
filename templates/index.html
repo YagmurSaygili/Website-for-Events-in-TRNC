@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="static/style.css" type="text/css">
+</head>
+<body>
+{% if username %}
+<div class="top">Welcome again !</div>
+<div class="currDate">getDate()</div>
+<div class="containerHome">
+    <p>Welcome {{ username }}</p>
+    <label for="searchField">Enter Keyword:</label><br>
+    <input type="text" id="searchField" name="searchField" required><br>
+    <button action="/search" method="POST" type="button" class="registerbtn">Search</button>
+    <div class="msg">{{ searchField }}</div>
+    <a href=/AddEvent><button type="button" class="registerbtn">Add Event</button></a>
+    <a href=/myEvents><button type="button" class="registerbtn">My Events</button></a>
+    <a href=/logout><button type="button" class="logoutbtn">Logout</button></a>
+
+    <table class="EventTable">
+            <tr>
+                <th>Name</th>
+                <th>City</th>
+                <th>Price</th>
+                <th>Date</th>
+                <th>Time</th>
+            </tr>
+            {% for event in events %}
+            <tr>
+                <td>{{ event[0] }}</td>
+                <td>{{ event[1] }}</td>
+                <td>{{ event[2] }}</td>
+                <td>{{ event[3] }}</td>
+                <td>{{ event[4] }}</td>>
+              <td>
+                <form action="/seeMore" method="POST">
+                  <input type="hidden" name="eventId" value="{{ event[0] }}">
+                  <input type="submit" value="See more">
+                </form>
+              </td>
+            </tr>
+            {% endfor %}
+          </table>
+
+</div>
+{% else %}
+<div class="top">Welcome !</div>
+    <form action="/login" method="POST">
+        <div class="container">
+            <label>Username : </label>
+            <input type="text" placeholder="Enter Username" name="username" required>
+            <label>Password : </label>
+            <input type="password" placeholder="Enter Password" name="password" required>
+            <button type="submit" class="loginbtn">Login</button>
+            <a href="{{url_for('register') }}"><button type="button" class="registerbtn">Register</button></a>
+            <div class="msg">{{ msg }}</div>
+        </div>
+    </form>
+{% endif %}
+</body>
+</html>

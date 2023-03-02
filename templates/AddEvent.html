@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="static/style.css" type="text/css">
+</head>
+<body>
+<div class="top">Add Event !</div>
+<div class="currDate">getDate()</div>
+<a href=/logout><button type="button" class="logoutbtn">Logout</button></a>
+<a href=/index><button type="button" class="mainPagebtn">Go to main Page</button></a>
+    <div class="containerAddEvent">
+        <form action="/create-event" method="POST">
+            <label for="eventName">Event name:</label><br>
+            <input type="text" id="eventName" name="eventName" required><br>
+
+            <label  for="eventDescription">Description:</label><br>
+            <textarea id="eventDescription" name="eventDescription" required></textarea><br>
+
+            <label for="eventLocation">Location:</label><br>
+            <input type="text" id="eventLocation" name="eventLocation" required><br>
+
+            <label for="eventCity">City:</label><br>
+            <select id="eventCity" name="eventCity" required>
+                <option value="">--Select a city--</option>
+                <option value="Lefkosa">Lefkosa</option>
+                <option value="Girne">Girne</option>
+                <option value="Guzelyurt">Guzelyurt</option>
+                <option value="Gazi Magusa">Gazi Magusa</option>
+                <option value="Lefke">Lefke</option>
+                <option value="Iskele">Iskele</option>
+            </select><br>
+
+            <label for="eventPrice">Ticket price:</label><br>
+            <input type="number" id="eventPrice" name="eventPrice" required><br>
+
+            <label for="eventDate">Date & time:</label><br>
+            <input type="datetime-local" id="eventDate" name="eventDate" required><br><br>
+
+            <input type="submit" value="Create event">
+        </form>
+        <div class="msg">{{ msg }}</div>
+    </div>
+</body>
+</html>
